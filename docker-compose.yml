@@ -1,0 +1,15 @@
+services:
+  linux-practice:
+    build: .
+    container_name: linux-practice
+    volumes:
+      - .:/workspace
+    stdin_open: true
+    tty: true
+    # 一部の実験で必要な特権モード（プロセス管理等）
+    privileged: true
+    # SYS_PTRACE capability（straceやgdb用）
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
