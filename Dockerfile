@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     less \
     procps \
+    psmisc \
     iproute2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
